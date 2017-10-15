@@ -1,0 +1,16 @@
+.good {
+  color: green;
+}
+
+.bad {
+  color: orangered;
+  font-weight: bolder;
+}
+
+.ugly {
+  background-color: pink;
+}
+
+.weird {
+  background-color: purple;
+}
