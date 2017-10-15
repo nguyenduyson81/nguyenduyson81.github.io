@@ -70,7 +70,7 @@ function calResult(Pmax, h_steel, R_steel, H_gel, W_gel, a_MEMS, t_MEMS) {
 }
 
 $(document).ready(function () {
-    $('#param-Pmax').keyup(function () {
+    $('#param-Pmax').bind('keyup mouseup', function () {
         $(this).attr('class', '');
         const Pmax = $(this).val();
         if (!Pmax) {
@@ -82,7 +82,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#param-alpha').keyup(function () {
+    $('#param-alpha').bind('keyup mouseup', function () {
         $(this).attr('class', '');
         const alpha = $(this).val();
         if (!alpha) {
@@ -94,7 +94,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#param-beta').keyup(function () {
+    $('#param-beta').bind('keyup mouseup', function () {
         $(this).attr('class', '');
         const beta = $(this).val();
         if (!beta) {
@@ -106,7 +106,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#param-a').keyup(function () {
+    $('#param-a').bind('keyup mouseup', function () {
         $(this).attr('class', '');
         const a = $(this).val();
         if (!a) {
@@ -118,7 +118,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#param-t').keyup(function () {
+    $('#param-t').bind('keyup mouseup', function () {
         $(this).attr('class', '');
         const t = $(this).val();
         if (!t) {
@@ -130,7 +130,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#param-H_gel').keyup(function () {
+    $('#param-H_gel').bind('keyup mouseup', function () {
         $(this).attr('class', '');
         const t = $(this).val();
         if (!t) {
@@ -142,7 +142,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#param-W_gel').keyup(function () {
+    $('#param-W_gel').bind('keyup mouseup', function () {
         $(this).attr('class', '');
         const t = $(this).val();
         if (!t) {
@@ -154,7 +154,7 @@ $(document).ready(function () {
         }
     });
 
-    $('input').keyup(function () {
+    $('input').bind('keyup mouseup', function () {
         const [result1, result2, result3, w0_MEMS] = calResult($('#param-Pmax').val(), $('#param-alpha').val(), $('#param-beta').val(), $('#param-H_gel').val(), $('#param-W_gel').val(), $('#param-a').val(), $('#param-t').val());
         $('#result1').text(result1);
         $('#result2').text(result2);
