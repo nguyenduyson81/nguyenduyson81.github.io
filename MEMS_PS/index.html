@@ -11,9 +11,9 @@
     <img src="images/Device_picture.png" alt="some_text" style="width:30%;height:30%"/>
     <br/>
     <br/>
-    <label for="param-Pmax"> Maximum Pressure Range (kPa) </label>
+    <label for="param-Pmax"> Maximum Pressure Range P (kPa) </label>
     <br/>
-    <input type="number" id="param-Pmax" value="500">
+    <input type="number" id="param-Pmax" value="5000">
     <br/>
     <br/>
 
@@ -21,17 +21,17 @@
         <br/>
     </label>
     <br/>
-    <label for="param-alpha"> Thickness of the stainless steel (mm)</label>
+    <label for="param-alpha"> Thickness of the stainless steel h (mm)</label>
 
-    <input type="number" id="param-alpha">
+    <input type="number" id="param-alpha" value="0.5">
     <br/>
 
-    <label for="param-beta">Radius of the stainless steel (mm)</label>
+    <label for="param-beta">Radius of the stainless steel r (mm)</label>
 
-    <input type="number" id="param-beta">
+    <input type="number" id="param-beta" value ="10" >
     <br/>
 
-    <div>Maximum deflection of the stainless steel (um) =
+    <div>Maximum deflection of the stainless steel w0_steel (um) =
         <span id="result1"> </span>
     </div>
     <br/>
@@ -39,37 +39,37 @@
 
     <label> MODULE 2: Liquid Gel </label>
     <br/>
-    <label for="param-H_gel"> Height of liquid gel (cm)</label>
+    <label for="param-H_gel"> Height of liquid gel H (cm)</label>
 
     <input type="number" id="param-H_gel">
     <br/>
 
-    <label for="param-W_gel"> Width of liquid gel (cm)</label>
+    <label for="param-W_gel"> Width of liquid gel W (cm)</label>
     <input type="number" id="param-W_gel">
     <br/>
     <br/>
 
     <label> MODULE 3: MEMS Pressure Sensor </label>
     <br/>
-    <label for="param-a">Diaphragm of MEMS sensor (mm) </label>
+    <label for="param-a">Diaphragm of MEMS sensor a (mm) </label>
 
     <input type="number" id="param-a">
     <br/>
 
-    <label for="param-t">Thickness of MEMS sensor (um) </label>
+    <label for="param-t">Thickness of MEMS sensor t (um) </label>
 
     <input type="number" id="param-t">
     <br/>
     <br/>
 
-    <div>Static Pressure on MEMS diaphragm due to the liquid gel (kPa) =
+    <div>Static Pressure on MEMS diaphragm due to the liquid gel P0 (kPa) =
         <span id="result2"> </span>
     </div>
     <br/>
-    <div>Maximum MEMS diaphragm deflection (um) =
+    <div>Maximum MEMS diaphragm deflection w0_MEMS (um) =
         <span id="w0_MEMS"> </span>
     </div>
-    <div>Pressure on MEMS diaphragm due to Pressure on the stainless steel (kPa) =
+    <div>Pressure on MEMS diaphragm due to Pressure on the stainless steel PM (kPa) =
         <span id="result3"> </span>
     </div>
 </body>
