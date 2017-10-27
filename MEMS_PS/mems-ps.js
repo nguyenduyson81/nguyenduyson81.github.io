@@ -61,8 +61,9 @@ function calResult(Pmax, h_steel, R_steel, H_gel, W_gel, a_MEMS, t_MEMS) {
 
         w0_steel = Math.round(w0_steel * 100) / 100;
         w0_MEMS = Math.round(w0_MEMS * 100) / 100;
-        P0_MEMS = 1000 * H_gel * 9.81 / 1e3;
-        P0_MEMS = Math.round(P0_MEMS * 10) / 10;
+        K = 1.38*D_MEMS/D_steel;
+        P0_MEMS = 1000 * H_gel * 9.81 /(1+ 4* a_MEMS**6/(R_steel**4 * W_gel*K) )/1e3;
+        P0_MEMS = Math.round(P0_MEMS * 100) / 100;
 
         return [w0_steel, P0_MEMS, P_MEMS, w0_MEMS]
     }
