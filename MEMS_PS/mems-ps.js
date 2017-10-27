@@ -52,11 +52,12 @@ function calResult(Pmax, h_steel, R_steel, H_gel, W_gel, a_MEMS, t_MEMS) {
         D_MEMS = E_Si * (t_MEMS ** 3) / 12 / (1 - v_Si ** 2);
         D_steel = E_steel * (h_steel ** 3) / 12 / (1 - v_steel ** 2);
 
-        P_MEMS = Pmax * 1.38 * D_MEMS / D_steel * (R_steel / a_MEMS) ** 6;
-        P_MEMS = Math.round(P_MEMS * 10) / 10;
+        P_MEMS = Pmax /(1+ 0.724 * D_steel/D_MEMS * (a_MEMS / R_steel) ** 6);
+        P_MEMS = Math.round(P_MEMS * 100) / 100;
 
-        w0_steel = 1e6 * Pmax * (R_steel ** 4) / 64 / D_steel;
-        w0_MEMS = 0.115 * w0_steel * (R_steel / a_MEMS) ** 2
+        w0_steel = 1e6 * (Pmax - P_MEMS) * (R_steel ** 4) / 64 / D_steel;
+        w0_MEMS = 0.115 * w0_steel * (R_steel / a_MEMS) ** 2;
+        w0_MEMS_1 = P_MEMS*(a_MEMS**4)/792/D_MEMS;
 
         w0_steel = Math.round(w0_steel * 100) / 100;
         w0_MEMS = Math.round(w0_MEMS * 100) / 100;
